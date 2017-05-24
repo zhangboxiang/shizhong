@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oBox = document.getElementById('box');
+	clock();
+	setInterval(clock,1000);
+	function clock(){
+		var oDate = new Date();
+		var Y = oDate.getFullYear();//获取年
+		var M = oDate.getMonth()+1;//获取月 0-11 
+		var D = oDate.getDate();//获取日
+		var h = oDate.getHours();
+		var m = oDate.getMinutes();
+		var s = oDate.getSeconds();
+		var str = Y+'年'+toDub(M)+'月'+toDub(D)+'日'+toDub(h)+'时'+toDub(m)+'分'+toDub(s)+'秒';
+		//document.write(str);	
+		oBox.innerHTML = str;
+	}
+	function toDub(n){
+		return 	n<10 ? '0'+n:''+n;
+	}	
+};
+</script>
+</head>
+
+<body>
+	<div id="box"></div>
+</body>
+</html>
